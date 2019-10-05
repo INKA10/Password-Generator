@@ -27,20 +27,37 @@
                 <div class="content">
                     <h4>Generate a Password</h4>
                     <br />
-                    <input class="rounded my-3" type="text" id="display" placeholder="Your Secure Password">
+                    <input class="rounded my-3" type="text" id="yourPW" placeholder="Your Secure Password">
                     <br />
-                    <input type="range" min="8" max="128" name="slider" id="slider">
-                    <br />
-                    <button class="btn btn-danger rounded-pill mt-4" onclick="generate()">Generate Password</button>
+
+                    <button class="btn btn-danger rounded-pill mt-4" id="button">Generate Password</button>
+
+                    <div class="bg-modal">
+                            <div class="modal-content">
+
+                                <div class="close">+</div>
+
+                                <input type="number" id="charNum" value="8" min="8" max="128"/>
+                                <br/>
+                                Numbers: <input type="checkbox" id="num"/>
+                                Symbols: <input type="checkbox" id="sym"/>
+
+                                
+                                <br/>
+                                <button id="submit">Submit</button>
+                            
+                                <br/>
+
+
+ 
+                            </div>
+                    </div>
+
+
                     <button class="btn btn-secondary rounded-pill mt-4" onclick="copyPassword()">Copy to Clipboard</button>
 
                     <div id="length"></div>
-                </div>
 
-                <div class="previous_passwords">
-                    <b>Previously Generated Passwords</b>
-                    <br />
-                    <div id="lastNums"></div>
                 </div>
 
             </div>

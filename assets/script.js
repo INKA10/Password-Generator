@@ -1,49 +1,44 @@
-//generate random password
-function generate(){
+var char = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+var num = '0123456789';
+var sym = '~!@#$%^&*()_+';
 
-    //set password length/complexity
-    let complexity = document.getElementById("slider").value;
+var charNum = document.getElementById('charNum');
+var numBox = document.getElementById('num');
+var symBox = document.getElementById('sym');
+var submit = document.getElementById('submit');
+var yourPW = document.getElementById('yourPW');
 
-    //possible password values
-    let values = "ABCDEFGHIJKLMNOPQRSTUVWZYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+";
 
-    let password = "";
 
-    //create for loop to choose password characters
-    for(var i = 0; i <= complexity; i++){
-        password = password + values.charAt(Math.floor(Math.random() * Math.floor(values.length - 1)));
+submit.addEventListener('click', function(e) {
+    var characters = char;
+    (numBox.checked) ? characters += num: '';
+    (symBox.checked) ? characters += sym: '';
+    yourPW.value = password(charNum.value, characters);
+});
+
+function password(l, characters){
+    var pwd = '';
+    for (var i = 0; i<l; i++){
+        pwd += characters.charAt(Math.floor(Math.random() * characters.length));
     }
-
-    //add password to textbox/display area
-    document.getElementById("display").value = password;
-
-    //add password to previously generated passwords section
-    document.getElementById("lastNums").innerHTML += password + "<br />";
-
+    return pwd;
 }
 
-//set default length display of 25
-document.getElementById("length").innerHTML = "Length: 25";
+// // eventlistener to open & close modal 
+document.getElementById('button').addEventListener('click', function() {
+    document.querySelector('.bg-modal').style.display = 'flex';
+});
 
-//function to set length based on slider position
-document.getElementById("slider").oninput = function(){
+document.querySelector('.close').addEventListener('click', function() {
+    document.querySelector('.bg-modal').style.display = 'none';
+});
 
-    if(document.getElementById("slider").value > 0){
-        document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
-    }
-    else{
-        document.getElementById("length").innerHTML = "Length: 1";
-    }
+// copy to clipboard - need to add notification once pw has been copied
 
-}
-
-//function to copy password to clipboard
 function copyPassword(){
-
-    document.getElementById("display").select();
-
-    document.execCommand("Copy");
-
-    alert("Password copied to clipboard!");
-
+    var copyText = document.getElementById("yourPW");
+    copyText.select();
+    copyText.setSelectionRange(0, 99999); 
+    document.execCommand("copy");
 }
