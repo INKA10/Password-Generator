@@ -1,5 +1,5 @@
 var char = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-var num = '0123456789';
+var num = '01234567890123456789';
 var sym = '~!@#$%^&*()_+';
 
 var charNum = document.getElementById('charNum');
@@ -33,6 +33,12 @@ document.getElementById('button').addEventListener('click', function() {
 document.querySelector('.close').addEventListener('click', function() {
     document.querySelector('.bg-modal').style.display = 'none';
 });
+
+document.getElementById('submit').addEventListener('click', function() {
+    document.querySelector('.bg-modal').style.display = 'none';
+});
+
+
 
 // copy to clipboard - need to add notification once pw has been copied
 

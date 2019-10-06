@@ -9,22 +9,10 @@
 
 #yourPW{
     width: 100%;
+    height: 150px;
+    text-align: center;
     border: 2px dashed #8c9096!important;
 }
-
-#slider{
-    width: 100%;
-}
-
-#length{
-    display: inline-block;
-    width: 100px;
-}
-
-.previous_passwords{
-    margin-bottom: 20px;
-}
-
 /* modal styling */
 
 .bg-modal {
@@ -64,4 +52,8 @@ input {
     transform: rotate(45deg);
     cursor: pointer;
 
+}
+
+.form-check {
+    align-self: center;
 }
