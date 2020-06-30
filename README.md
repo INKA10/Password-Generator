@@ -22,4 +22,4 @@ Once the user clicks on submit, they can then 'copy to clipboard' the password a
 4. Copy to Clipboard
 5. Generate a new password at your pleasing as needed.
 
-![Password Generator](Password-Generator/ScreenShotPass.png)
+![Password Generator](ScreenShotPass.png)
