@@ -22,4 +22,4 @@ Once the user clicks on submit, they can then 'copy to clipboard' the password a
 4. Copy to Clipboard
 5. Generate a new password at your pleasing as needed.
 
-![Password Generator](Password-Generator/Screen Shot 2020-06-30 at 10.54.33 AM.png)
+![Password Generator](Password-Generator/ScreenShotPass.png)
